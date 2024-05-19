@@ -1,0 +1,2119 @@
+{
+	"info": {
+		"_postman_id": "0cd56347-ce81-4de6-bc06-5f163558ac08",
+		"name": "API Fahrezy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12558616"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@mail.com\",\r\n    \"password\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"admin@mail.com\",\r\n    \"password\": \"admin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "/login",
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 May 2024 10:07:31 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, must-revalidate"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "expires",
+									"value": "-1"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Success get data\",\n    \"data\": {\n        \"user\": {\n            \"id\": 1,\n            \"name\": \"admin\",\n            \"email\": \"admin@mail.com\",\n            \"role\": \"admin\",\n            \"google_id\": null,\n            \"google_token\": null,\n            \"google_refresh_token\": null,\n            \"created_at\": \"2024-05-19T08:28:18.000000Z\",\n            \"updated_at\": \"2024-05-19T08:28:18.000000Z\"\n        },\n        \"token\": \"2|pvi34BZlgB4k5Dp1eL1vt31ZLltOKX7O2zgTC5yb\"\n    }\n}"
+						},
+						{
+							"name": "Login Failed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"admin@mail.com\",\r\n    \"password\": \"admin123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 May 2024 10:12:26 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, must-revalidate"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "expires",
+									"value": "-1"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"email or password incorect!\",\n    \"errors\": {\n        \"email\": [\n            \"email or password incorect!\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"\",\r\n    \"email\": \"jajang\",\r\n    \"password\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"jajang\",\r\n    \"email\": \"jajang@myeon.com\",\r\n    \"password\": \"jajang\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "/register",
+									"path": [
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 May 2024 10:13:43 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, must-revalidate"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "expires",
+									"value": "-1"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Success created a user!\",\n    \"data\": {\n        \"name\": \"jajang\",\n        \"email\": \"jajang@myeon.com\",\n        \"updated_at\": \"2024-05-19T10:13:43.000000Z\",\n        \"created_at\": \"2024-05-19T10:13:43.000000Z\",\n        \"id\": 3\n    }\n}"
+						},
+						{
+							"name": "Register Failed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"\",\r\n    \"email\": \"jajang\",\r\n    \"password\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/register",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 May 2024 10:14:15 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, must-revalidate"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "expires",
+									"value": "-1"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Validation Errors!\",\n    \"errors\": {\n        \"name\": [\n            \"The name field is required.\"\n        ],\n        \"email\": [\n            \"The email must be a valid email address.\"\n        ],\n        \"password\": [\n            \"The password field is required.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Register With OAuth Google",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/oauth/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"oauth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "How to",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "/oauth/register",
+									"path": [
+										"oauth",
+										"register"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "You need to open this url in browser"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwt_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/logout",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Logout Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "/logout",
+									"path": [
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 May 2024 10:15:04 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, must-revalidate"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "expires",
+									"value": "-1"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Success get data\",\n    \"data\": \"Logout success!\"\n}"
+						},
+						{
+							"name": "Logout Failed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/logout",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"logout"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 May 2024 10:15:22 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, must-revalidate"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "expires",
+									"value": "-1"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+						}
+					]
+				}
+			],
+			"description": "Authentication routes for users"
+		},
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "Index",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/categories",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Index",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "/categories",
+									"path": [
+										"categories"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 May 2024 12:47:58 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, must-revalidate"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "expires",
+									"value": "-1"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Success get data\",\n    \"data\": [\n        {\n            \"id\": 2,\n            \"name\": \"Laptop\",\n            \"created_at\": \"2024-05-19T12:29:21.000000Z\",\n            \"updated_at\": \"2024-05-19T12:29:21.000000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Laptop\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/categories",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "/categories",
+									"path": [
+										"categories"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 May 2024 11:03:31 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, must-revalidate"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "expires",
+									"value": "-1"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Success create Categories!\",\n    \"data\": {\n        \"name\": \"Laptop\",\n        \"updated_at\": \"2024-05-19T11:03:31.000000Z\",\n        \"created_at\": \"2024-05-19T11:03:31.000000Z\",\n        \"id\": 1\n    }\n}"
+						},
+						{
+							"name": "Create Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/categories",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"categories"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 May 2024 11:03:48 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, must-revalidate"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "expires",
+									"value": "-1"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Validation Errors!\",\n    \"errors\": {\n        \"name\": [\n            \"The name field is required.\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Show",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/categories/{{id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"categories",
+								"{{id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Show Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "/categories/",
+									"path": [
+										"categories",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 May 2024 11:05:25 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, must-revalidate"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "expires",
+									"value": "-1"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Success get data\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Laptop\",\n        \"created_at\": \"2024-05-19T11:03:31.000000Z\",\n        \"updated_at\": \"2024-05-19T11:03:31.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"PC\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/categories/{{id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"categories",
+								"{{id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"PC\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "/categories/",
+									"path": [
+										"categories",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 May 2024 11:09:11 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, must-revalidate"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "expires",
+									"value": "-1"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Success update Categories!\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"PC\",\n        \"created_at\": \"2024-05-19T11:03:31.000000Z\",\n        \"updated_at\": \"2024-05-19T11:09:11.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/categories/{{id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"categories",
+								"{{id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "/categories/",
+									"path": [
+										"categories",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 May 2024 12:27:59 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, must-revalidate"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "expires",
+									"value": "-1"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Success delete Category\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"PC\",\n        \"created_at\": \"2024-05-19T11:03:31.000000Z\",\n        \"updated_at\": \"2024-05-19T11:09:11.000000Z\"\n    }\n}"
+						}
+					]
+				}
+			],
+			"description": "Categories Routes Only for **ADMIN ROLES**, if Categories were deleted all **PODUCTS** that have that Category will also be deleted",
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{jwt_token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Index",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/products",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Index",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "/products",
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 May 2024 12:47:37 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, must-revalidate"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "expires",
+									"value": "-1"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Success get data\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Lenovo Ideapad\",\n            \"description\": \"Built for cheaper but reliable\",\n            \"price\": 2300000,\n            \"image\": \"ShlRhfWTaYisqGVYh37BYidHuQNqWa0ZforwZNJ6.png\",\n            \"category_id\": 2,\n            \"expired_at\": \"2025-03-11T17:00:00.000000Z\",\n            \"modified_by\": \"admin@mail.com\",\n            \"created_at\": \"2024-05-19T12:30:15.000000Z\",\n            \"updated_at\": \"2024-05-19T12:45:02.000000Z\",\n            \"image_url\": \"http://fahrezy.online/storage/product-images/ShlRhfWTaYisqGVYh37BYidHuQNqWa0ZforwZNJ6.png\",\n            \"category\": {\n                \"id\": 2,\n                \"name\": \"Laptop\",\n                \"created_at\": \"2024-05-19T12:29:21.000000Z\",\n                \"updated_at\": \"2024-05-19T12:29:21.000000Z\"\n            }\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Lenovo Thinkpad\",\n            \"description\": \"Ultra High Productivity\",\n            \"price\": 3500000,\n            \"image\": \"rnA2ToSDdrR5Kp9Tt0RZPR7EnqGyfW5uZ0YHKUW0.png\",\n            \"category_id\": 2,\n            \"expired_at\": \"2024-04-01T17:00:00.000000Z\",\n            \"modified_by\": \"admin@mail.com\",\n            \"created_at\": \"2024-05-19T12:47:20.000000Z\",\n            \"updated_at\": \"2024-05-19T12:47:20.000000Z\",\n            \"image_url\": \"http://fahrezy.online/storage/product-images/rnA2ToSDdrR5Kp9Tt0RZPR7EnqGyfW5uZ0YHKUW0.png\",\n            \"category\": {\n                \"id\": 2,\n                \"name\": \"Laptop\",\n                \"created_at\": \"2024-05-19T12:29:21.000000Z\",\n                \"updated_at\": \"2024-05-19T12:29:21.000000Z\"\n            }\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Create",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Lenovo Thinkpad",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Ultra High Productivity",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "3500000",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"contentType": "multipart/form-data",
+									"type": "file",
+									"src": "/C:/Users/rizki/Downloads/JP Eid Al-Fitr.png"
+								},
+								{
+									"key": "category_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "expired_at",
+									"value": "04/02/2024",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/products",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Lenovo Thinkpad",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Ultra High Productivity",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "3500000",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"contentType": "multipart/form-data",
+											"type": "file",
+											"src": "/C:/Users/rizki/Downloads/JP Eid Al-Fitr.png"
+										},
+										{
+											"key": "category_id",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "expired_at",
+											"value": "04/02/2024",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/products",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 May 2024 12:47:20 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, must-revalidate"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "expires",
+									"value": "-1"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Success create Products\",\n    \"data\": {\n        \"name\": \"Lenovo Thinkpad\",\n        \"description\": \"Ultra High Productivity\",\n        \"price\": \"3500000\",\n        \"image\": \"rnA2ToSDdrR5Kp9Tt0RZPR7EnqGyfW5uZ0YHKUW0.png\",\n        \"category_id\": 2,\n        \"expired_at\": \"2024-04-01T17:00:00.000000Z\",\n        \"modified_by\": \"admin@mail.com\",\n        \"updated_at\": \"2024-05-19T12:47:20.000000Z\",\n        \"created_at\": \"2024-05-19T12:47:20.000000Z\",\n        \"id\": 2,\n        \"image_url\": \"http://fahrezy.online/storage/product-images/rnA2ToSDdrR5Kp9Tt0RZPR7EnqGyfW5uZ0YHKUW0.png\",\n        \"category\": {\n            \"id\": 2,\n            \"name\": \"Laptop\",\n            \"created_at\": \"2024-05-19T12:29:21.000000Z\",\n            \"updated_at\": \"2024-05-19T12:29:21.000000Z\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Show",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/products/{{id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"{{id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Show Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/products/{{id}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"products",
+										"{{id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 May 2024 12:45:57 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, must-revalidate"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "expires",
+									"value": "-1"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Success get data\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Lenovo Ideapad\",\n        \"description\": \"Built for cheaper but reliable\",\n        \"price\": 2300000,\n        \"image\": \"ShlRhfWTaYisqGVYh37BYidHuQNqWa0ZforwZNJ6.png\",\n        \"category_id\": 2,\n        \"expired_at\": \"2025-03-11T17:00:00.000000Z\",\n        \"modified_by\": \"admin@mail.com\",\n        \"created_at\": \"2024-05-19T12:30:15.000000Z\",\n        \"updated_at\": \"2024-05-19T12:45:02.000000Z\",\n        \"image_url\": \"http://fahrezy.online/storage/product-images/ShlRhfWTaYisqGVYh37BYidHuQNqWa0ZforwZNJ6.png\",\n        \"category\": {\n            \"id\": 2,\n            \"name\": \"Laptop\",\n            \"created_at\": \"2024-05-19T12:29:21.000000Z\",\n            \"updated_at\": \"2024-05-19T12:29:21.000000Z\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Lenovo Ideapad",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Built for cheaper but reliable",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "2300000",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/rizki/Downloads/JP Eid Al-Fitr.png"
+								},
+								{
+									"key": "category_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "expired_at",
+									"value": "03/12/2025",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/products/{{id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"{{id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "PUT",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Lenovo Ideapad",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Built for cheaper but reliable",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "2300000",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/rizki/Downloads/JP Eid Al-Fitr.png"
+										},
+										{
+											"key": "category_id",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "expired_at",
+											"value": "03/12/2025",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/products/{{id}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"products",
+										"{{id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 May 2024 12:45:02 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, must-revalidate"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "expires",
+									"value": "-1"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Success update Products\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Lenovo Ideapad\",\n        \"description\": \"Built for cheaper but reliable\",\n        \"price\": \"2300000\",\n        \"image\": \"ShlRhfWTaYisqGVYh37BYidHuQNqWa0ZforwZNJ6.png\",\n        \"category_id\": 2,\n        \"expired_at\": \"2025-03-11T17:00:00.000000Z\",\n        \"modified_by\": \"admin@mail.com\",\n        \"created_at\": \"2024-05-19T12:30:15.000000Z\",\n        \"updated_at\": \"2024-05-19T12:45:02.000000Z\",\n        \"image_url\": \"http://fahrezy.online/storage/product-images/ShlRhfWTaYisqGVYh37BYidHuQNqWa0ZforwZNJ6.png\",\n        \"category\": {\n            \"id\": 2,\n            \"name\": \"Laptop\",\n            \"created_at\": \"2024-05-19T12:29:21.000000Z\",\n            \"updated_at\": \"2024-05-19T12:29:21.000000Z\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/products/{{id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"{{id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/products/{{id}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"products",
+										"{{id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 May 2024 12:48:14 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "private, must-revalidate"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "expires",
+									"value": "-1"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Success delete Products\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Lenovo Ideapad\",\n        \"description\": \"Built for cheaper but reliable\",\n        \"price\": 2300000,\n        \"image\": \"ShlRhfWTaYisqGVYh37BYidHuQNqWa0ZforwZNJ6.png\",\n        \"category_id\": 2,\n        \"expired_at\": \"2025-03-11T17:00:00.000000Z\",\n        \"modified_by\": \"admin@mail.com\",\n        \"created_at\": \"2024-05-19T12:30:15.000000Z\",\n        \"updated_at\": \"2024-05-19T12:45:02.000000Z\",\n        \"image_url\": \"http://fahrezy.online/storage/product-images/ShlRhfWTaYisqGVYh37BYidHuQNqWa0ZforwZNJ6.png\",\n        \"category\": {\n            \"id\": 2,\n            \"name\": \"Laptop\",\n            \"created_at\": \"2024-05-19T12:29:21.000000Z\",\n            \"updated_at\": \"2024-05-19T12:29:21.000000Z\"\n        }\n    }\n}"
+						}
+					]
+				}
+			],
+			"description": "Products route can be access by **ADMIN** or **USER**",
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{jwt_token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "jwt_token",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "id",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
